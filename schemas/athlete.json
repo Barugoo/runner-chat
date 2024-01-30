@@ -1,0 +1,49 @@
+{
+    "$id": "https://schemas.trait.app/athlete.json",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/TopLevel",
+    "definitions": {
+        "TopLevel": {
+            "type": "object",
+            "description": "represents a messanger user",
+            "additionalProperties": false,
+            "properties": {
+                "athlete_id": {
+                    "type": "string",
+                    "description": "primary id",
+                    "format": "uuid"
+                },
+                "profile": {
+                    "$ref": "./refs/athlete_profile.json"
+                },
+                "account_name": {
+                    "type": "string",
+                    "description": "unique string set by the athlete; used for search, mentions etc."
+                },
+                "phone_number": {
+                    "type": "string",
+                    "description": "phone number in international format"
+                },
+                "configuration": {
+                    "description": "A list of configuration properties",
+                    "type": "object"
+                },
+                "timestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "when this database object was created"
+                },
+                "revision": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "athlete_id",
+                "account_name",
+                "phone_number",
+                "profile"
+            ],
+            "title": "TopLevel"
+        }
+    }
+}

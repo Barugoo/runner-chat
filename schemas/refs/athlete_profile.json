@@ -1,0 +1,36 @@
+{
+    "$id": "https://schemas.trait.app/refs/athlete_profile.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "A representation of athlete profile",
+    "type": "object",
+    "required": [
+        "athlete_id",
+        "account_name"
+    ],
+    "additionalProperties": false,
+    "title": "AthleteProfile",
+    "properties": {
+        "avatar": {
+            "type": "object",
+            "description": "avatar full size and preview links container",
+            "properties": {
+                "preview_320px": {
+                    "type": "string",
+                    "description": "should be used for preview in chats; relative file path"
+                },
+                "full_1080px": {
+                    "type": "string",
+                    "description": "should be used on profile screen; relative file path"
+                }
+            }
+        },
+        "account_name": {
+            "type": "string",
+            "description": "unique string set by the athlete; use as a fallback if display_name is missing"
+        },
+        "display_name": {
+            "type": "string",
+            "description": "display name in Unicode"
+        }
+    }
+}

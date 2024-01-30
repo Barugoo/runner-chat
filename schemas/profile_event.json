@@ -1,0 +1,34 @@
+{
+    "$id": "https://schemas.trait.app/profile_event.json",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/TopLevel",
+    "definitions": {
+        "TopLevel": {
+            "type": "object",
+            "description": "represents a messanger user",
+            "additionalProperties": false,
+            "properties": {
+                "action": {
+                    "$ref": "./refs/event_action.json"
+                },
+                "athlete_id": {
+                    "type": "string",
+                    "description": "primary id",
+                    "format": "uuid"
+                },
+                "profile": {
+                    "$ref": "./refs/athlete_profile.json"
+                },
+                "revision": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "action",
+                "athlete_id",
+                "profile"
+            ],
+            "title": "TopLevel"
+        }
+    }
+}

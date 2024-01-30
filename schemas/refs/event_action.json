@@ -1,0 +1,11 @@
+{
+    "$id": "https://schemas.trait.app/refs/event_action.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "EventAction",
+    "description": "Event Action",
+    "type": "string",
+    "enum": [
+        "upsert",
+        "delete"
+    ]
+}

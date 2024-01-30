@@ -1,0 +1,44 @@
+{
+    "$id": "https://schemas.trait.app/rest_chat_response.json",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/TopLevel",
+    "definitions": {
+        "TopLevel": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "action": {
+                    "$ref": "./refs/event_action.json"
+                },
+                "message_id": {
+                    "type": "string",
+                    "description": "primary id",
+                    "format": "uuid"
+                },
+                "chat_id": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "properties": {
+                    "$ref": "refs/message_properties.json"
+                },
+                "timestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "when this message object was created in database"
+                },
+                "revision": {
+                    "type": "integer",
+                    "description": "database revision number of the object"
+                }
+            },
+            "required": [
+                "action",
+                "message_id",
+                "chat_id",
+                "timestamp"
+            ],
+            "title": "TopLevel"
+        }
+    }
+}

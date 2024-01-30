@@ -1,0 +1,47 @@
+{
+    "$id": "https://schemas.trait.app/chat.json",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/TopLevel",
+    "definitions": {
+        "TopLevel": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "chat_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "description": "primary key"
+                },
+                "athlete_id": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "direct_id": {
+                    "type": "string",
+                    "description": "athlete_id of chat interlocutor",
+                    "format": "uuid"
+                },
+                "latest_message_id": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "last_read_message_id": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "timestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "revision": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "chat_id",
+                "athlete_id"
+            ],
+            "title": "TopLevel"
+        }
+    }
+}
