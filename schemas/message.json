@@ -1,0 +1,35 @@
+{
+    "$id": "https://schemas.trait.app/message.json",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/TopLevel",
+    "definitions": {
+        "TopLevel": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "message_id": {
+                    "type": "string",
+                    "description": "primary id",
+                    "format": "uuid"
+                },
+                "properties": {
+                    "$ref": "refs/message_properties.json"
+                },
+                "timestamp": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "when this database object was created"
+                },
+                "revision": {
+                    "type": "integer",
+                    "description": "database revision number of the object"
+                }
+            },
+            "required": [
+                "message_id",
+                "timestamp"
+            ],
+            "title": "TopLevel"
+        }
+    }
+}

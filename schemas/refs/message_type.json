@@ -1,0 +1,11 @@
+{
+    "$id": "https://schemas.trait.app/refs/message_type.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "MessageType",
+    "description": "Message Type",
+    "type": "string",
+    "enum": [
+        "direct_athlete_message",
+        "direct_system_message"
+    ]
+}
